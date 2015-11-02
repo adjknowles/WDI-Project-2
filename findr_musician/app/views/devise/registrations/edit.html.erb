@@ -14,6 +14,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :role %><br />
+    <%= f.select :role, ['Teacher', 'Student'], :prompt => 'Select Role' %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
@@ -29,7 +34,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :address %><br />
+    <%= f.label :address, 'Location (City)' %><br />
     <%= f.text_field :address %>
   </div>
 

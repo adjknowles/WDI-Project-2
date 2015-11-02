@@ -1,13 +1,11 @@
 <h1>User Profile Page</h1>
 
-<%= image_tag @user.image  %>
-
+<%= image_tag @user.image, :size => '260x180' %>
 <%= @user.email  %>
 
-
-<h4>Instrument I play</h4>
+<h4>Instruments I play</h4>
 <ul>
-<% @user.instruments.each do |instrument| %>
-  <li><%= instrument %></li>
-<% end %>
+  <% @user.instruments.each do |instrument| %>
+    <li><%= instrument.name %></li>
+  <% end %>
 </ul>

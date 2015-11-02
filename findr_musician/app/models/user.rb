@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
 
   has_and_belongs_to_many :instruments
 
-  has_many :lessons, class_name: "Lesson", foreign_key: "student_id"
-  has_many :lessons, class_name: "Lesson", foreign_key: "teacher_id"
+  has_many :lessons_as_student, class_name: "Lesson", foreign_key: "student_id"
+  has_many :lessons_as_teacher, class_name: "Lesson", foreign_key: "teacher_id"
 
   scope :teachers, -> { where(role: "Teacher") }
   scope :students, -> { where(role: "Student") }

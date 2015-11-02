@@ -1,29 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Lessons</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Time</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @lessons.each do |lesson| %>
-      <tr>
-        <td><%= lesson.time %></td>
-        <td><%= lesson.date %></td>
-        <td><%= link_to 'Show', lesson %></td>
-        <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
-        <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% if current_user.role == "Student" %>
+  <h1>Listing Lessons As Student</h1>
+  <ul>
+    <% @lessons_as_student.each do |lesson| %>
+    <li>
+      <ul>
+        <li><%= lesson.teacher.try(:name) %></li>
+        <li><%= lesson.time %></li>
+        <li><%= lesson.date %></li>
+        <li><%= link_to 'Show', user_lesson_path(lesson.teacher_id, lesson) %></li>
+        <li><%= link_to 'Edit', edit_user_lesson_path(lesson.teacher_id, lesson) %></li>
+        <li><%= link_to 'Destroy', user_lesson_path(lesson.teacher_id, lesson), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    </li>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Lesson', new_lesson_path %>
+  </ul>
+<% else %>
+  <h1>Listing Lessons As Teacher</h1>
+  <% @lessons_as_teacher.each do |lesson| %>
+  <li>
+    <ul>
+      <li><%= lesson.student.try(:name) %></li>
+      <li><%= lesson.time %></li>
+      <li><%= lesson.date %></li>
+      <li><%= link_to 'Show', user_lesson_path(lesson.teacher_id, lesson) %></li>
+      <li><%= link_to 'Edit', edit_user_lesson_path(lesson.teacher_id, lesson) %></li>
+      <li><%= link_to 'Destroy', user_lesson_path(lesson.teacher_id, lesson), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    </ul>
+  </li>
+  <% end %>
+<% end %>

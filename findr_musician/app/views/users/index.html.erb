@@ -7,7 +7,7 @@
       <li><%= link_to user.email, user %> </li>
       <li><%= user.role %></li>
       <% if user.role == "Teacher" %>
-        <li><a href="#">Book Lesson</a></li>
+        <li><%= link_to "Book Lesson", new_user_lesson_path(user) %></a></li>
       <% end %>
     </ul>
   </li> 

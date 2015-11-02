@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
 
-  <body>
+<body>
 
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
         <h1><a href="#"><%= link_to "FindR Musician", root_path %></a></h1>
       </li>
-       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
 
@@ -43,26 +43,28 @@
     </section>
   </nav>
 
-    <header>
-      <nav>
-        <ul>
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Register", new_user_registration_path %></li>
-          <li><%= link_to "Login", new_user_session_path %></li>
-          <li><%= link_to "Users", users_path %></li>
-          <li><%= link_to "My Profile", current_user %></li>
-          <li><%= link_to "Edit My Profile", edit_user_registration_path %></li>
-        </ul>
-      </nav>
-    </header>
+  <header>
+    <nav>
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <% if current_user %>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+        <li><%= link_to "Register", new_user_registration_path %></li>
+        <li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
 
-    <% flash.each do |name, message| %>
-      <div class="flash-message flash-message-<%= name %>">
-        <%= message %>
-      </div>
-    <% end %>
+      </ul>
+    </nav>
+  </header>
 
-    <%= yield %>
+  <% flash.each do |name, message| %>
+  <div class="flash-message flash-message-<%= name %>">
+    <%= message %>
+  </div>
+  <% end %>
 
-  </body>
+  <%= yield %>
+
+</body>
 </html>

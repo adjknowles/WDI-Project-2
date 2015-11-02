@@ -9,9 +9,15 @@
   </div>
 
   <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
     <%= f.label :image %><br />
     <%= f.text_field :image%>
   </div>
+
 
   <div class="field">
     <%= f.label :password %>
@@ -24,6 +30,11 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :instruments %><br />
+    <%= collection_check_boxes(:user, :instrument_ids, Instrument.all, :id, :name) %>
   </div>
 
   <div class="actions">

@@ -3,3 +3,11 @@
 <%= image_tag @user.image  %>
 
 <%= @user.email  %>
+
+
+<h4>Instrument I play</h4>
+<ul>
+<% @user.instruments.each do |instrument| %>
+  <li><%= instrument %></li>
+<% end %>
+</ul>

@@ -1,5 +1,10 @@
 <h1>All <%= @title %></h1>
 
+<%= search_form_for @q do |f| %>
+  <%= f.text_field :address_cont, :placeholder => "Search Address" %>
+  <%= f.submit %>
+<% end %>
+
 <ul>
 <% @users.each do |user| %>
 <div class="row">

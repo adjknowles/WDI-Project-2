@@ -38,3 +38,7 @@
   <strong>Mini Bio:</strong>
   <%= @user.description %>
 </p>
+
+<% if @user.role == "Teacher" %>
+  <p><%= link_to "Book Lesson", new_user_lesson_path(@user) %></p>
+<% end %>

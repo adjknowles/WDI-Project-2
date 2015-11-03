@@ -2,19 +2,6 @@
 
 <ul>
 <% @users.each do |user| %>
-  <li>
-    <ul>
-      <li><%= link_to user.email, user %></li>
-      <li><%= user.role %></li>
-      <% if user.role == "Teacher" %>
-        <li><%= link_to "Book Lesson", new_user_lesson_path(user) %></a></li>
-      <% end %>
-    </ul>
-  </li> 
-
-</ul>
-
-
 <div class="row">
     <div class="small-4 columns">
       <div class="item-wrapper">
@@ -26,10 +13,14 @@
           <% user.instruments.each do |instrument| %>
             <h5><%= instrument.name %></h5>
           <% end %>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin posuere sem enim, accumsan convallis risus semper.</p>
+        <p><strong>Hourly Rate: £<%= user.price %></strong></p>
       </div>
  
     </div>
 
   </div>
   <% end %>
+
+</ul>
+
+

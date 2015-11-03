@@ -1,11 +1,30 @@
 <h1>User Profile Page</h1>
 
 <%= image_tag @user.image, :size => '260x180' %>
-<%= @user.email  %>
 
-<h4>Instruments I play</h4>
-<ul>
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Location (City):</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Contact #:</strong>
+  <%= @user.contact_number %>
+</p>
+
+<p>
+  <strong>Instruments I teach:</strong>
   <% @user.instruments.each do |instrument| %>
-    <li><%= instrument.name %></li>
+    <%= instrument.name %>
   <% end %>
-</ul>
+</p>

@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :time %><br>
-    <%= f.time_select :time %>
+    <%= f.time_select :time, {minute_step: 15} %>
   </div>
   <div class="field">
     <%= f.label :date %><br>

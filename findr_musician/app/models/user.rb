@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
 
   scope :teachers, -> { where(role: "Teacher") }
   scope :students, -> { where(role: "Student") }
+  scope :with_instruments, -> (n){ joins(:instruments).where("instruments.id=?", n)}
 end

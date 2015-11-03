@@ -3,17 +3,18 @@ class UsersController < ApplicationController
     @title = "Users"
     @q = User.ransack(params[:q])
     if params[:q].present?
+      @q = User.with_instruments(params[:user][:instrument_id]).ransack(params[:q])
       @users = @q.result(distinct: true)
     else 
       @users = User.all
     end
-
   end
 
   def teachers 
     @title = "Teachers"
     @q = User.ransack(params[:q])
     if params[:q].present?
+      @q = User.with_instruments(params[:user][:instrument_id]).ransack(params[:q])
       @users = @q.result(distinct: true)
     else 
       @users = User.teachers
@@ -25,6 +26,7 @@ class UsersController < ApplicationController
     @title = "Students"
     @q = User.ransack(params[:q])
     if params[:q].present?
+      @q = User.with_instruments(params[:user][:instrument_id]).ransack(params[:q])
       @users = @q.result(distinct: true)
     else 
       @users = User.students

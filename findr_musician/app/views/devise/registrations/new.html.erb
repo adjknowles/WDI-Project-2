@@ -32,7 +32,7 @@
   </div>
 
   <div class="field">
-    <%= f.label 'City' %><br />
+    <%= f.label :address, 'Location (City)' %><br />
     <%= f.text_field :address %>
   </div>
 
@@ -43,7 +43,17 @@
 
   <div class="field">
     <%= f.label :image %><br />
-    <%= f.text_field :image%>
+    <%= f.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price, 'Cost per hour (£)' %><br />
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, 'Mini Bio' %><br />
+    <%= f.text_field :description %>
   </div>
 
   <div class="field">

@@ -8,11 +8,11 @@ class ApplicationController < ActionController::Base
     # my custom fields are :username, :image
     def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) do |u|
-        u.permit(:name, :role, :image, :email, :password, :password_confirmation, instrument_ids:[])
+        u.permit(:name, :role, :image, :price, :description, :email, :password, :password_confirmation, instrument_ids:[])
       end
 
       devise_parameter_sanitizer.for(:account_update) do |u|
-        u.permit(:name, :role, :image, :email, :password, :password_confirmation, :current_password, instrument_ids:[])
+        u.permit(:name, :role, :image, :price, :description, :email, :password, :password_confirmation, :current_password, instrument_ids:[])
       end
     end
 end

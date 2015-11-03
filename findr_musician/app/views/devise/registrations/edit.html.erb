@@ -49,6 +49,16 @@
   </div>
 
   <div class="field">
+    <%= f.label :price, 'Cost per hour (£)' %><br />
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, 'Mini Bio' %><br />
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
     <%= f.label :instruments %><br />
     <%= collection_check_boxes(:user, :instrument_ids, Instrument.all, :id, :name) %>
   </div>

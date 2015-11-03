@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+  <%= f.hidden_field :instrument_id, value: params["instrument_id"] %>
+
   <div class="field">
     <%= f.label :time %><br>
     <%= f.time_select :time, {minute_step: 15} %>

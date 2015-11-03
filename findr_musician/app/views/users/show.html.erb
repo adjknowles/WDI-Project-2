@@ -23,13 +23,6 @@
 </p>
 
 <p>
-  <strong>Instruments I teach:</strong>
-  <% @user.instruments.each do |instrument| %>
-    <%= instrument.name %>
-  <% end %>
-</p>
-
-<p>
   <strong>Hourly Rate:</strong>
   Hourly Rate: £<%= @user.price %>
 </p>
@@ -40,5 +33,10 @@
 </p>
 
 <% if @user.role == "Teacher" %>
-  <p><%= link_to "Book Lesson", new_user_lesson_path(@user) %></p>
+<p>
+  <strong>Instruments I teach:</strong>
+  <% @user.instruments.each do |instrument| %>
+    <%= instrument.name %> – <%= link_to "Request Booking", "/users/#{@user.id}/lessons/new?instrument_id=#{instrument.id}" %>
+  <% end %>
+</p>
 <% end %>

@@ -11,7 +11,7 @@
         </div>  
         <h3><%= user.name %></h3>
           <% user.instruments.each do |instrument| %>
-            <h5><%= instrument.name %></h5>
+            <strong>| <%= instrument.name %></strong>
           <% end %>
         <p><strong>Hourly Rate: £<%= user.price %></strong></p>
       </div>

@@ -71,5 +71,38 @@
 
   <%= yield %>
 
+  <footer>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+
+    <footer class="footer">
+      <div class="row">
+        <div class="small-12 medium-6 large-5 columns">
+          <p class="logo"><i class="fi-shield"></i> FindR Musician</p> 
+          <p class="footer-links">
+            <%= link_to "Home", root_path %>
+            <%= link_to "About Us", about_path %>
+            <a href="#">Contact</a>
+          </p>
+          <p class="copywrite">Copywrite © 2015</p>
+        </div>
+        <div class="small-12 medium-6 large-4 columns">
+          <ul class="contact">
+            <li><p><i class="fi-marker"></i>75 Dalmation Street, London, W12 7HJ</p></li>
+            <li><p><i class="fi-telephone"></i>0203 318 4736</p></li>
+            <li><p><i class="fi-mail"></i>contact@findrmusician.com</p></li>
+          </ul>
+        </div>
+        <div class="small-12 medium-12 large-3 columns">
+          <p class="about">Social</p>
+          <ul class="inline-list social">
+            <a href="#"><i class="fi-social-facebook"></i></a>
+            <a href="#"><i class="fi-social-twitter"></i></a>
+            <a href="#"><i class="fi-social-linkedin"></i></a>
+            <a href="#"><i class="fi-social-github"></i></a>
+          </ul>
+        </div>
+      </div>
+  </footer>
+
 </body>
 </html>

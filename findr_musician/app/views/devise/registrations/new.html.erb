@@ -63,11 +63,10 @@
     <%= collection_check_boxes(:user, :instrument_ids, Instrument.all, :id, :name) %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="large-8 large-offset-2 columns">
+    <%= f.submit "Sign up", class: "button" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
 </div>
 

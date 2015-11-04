@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  before_filter :set_search
+
+  def set_search
+    @q = User.ransack(params[:q])
+  end
 
   protected
     # my custom fields are :username, :image

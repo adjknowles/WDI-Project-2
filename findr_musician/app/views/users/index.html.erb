@@ -1,32 +1,38 @@
 <h1>All <%= @title %></h1>
 
 <%= search_form_for @q do |f| %>
-  <%= f.text_field :address_cont, :placeholder => "Search Address" %>
-  <%= collection_select :user, :instrument_id, Instrument.all, :id, :name %>
-  <%= f.submit %>
+<%= f.text_field :address_cont, :placeholder => "Search Address" %>
+<%= collection_select :user, :instrument_id, Instrument.all, :id, :name %>
+<%= f.submit %>
 <% end %>
 
+
 <ul>
-<% @users.each do |user| %>
-<div class="row">
-    <div class="small-4 columns">
+  <div class="row">
+    <div class="large-8 large-offset-2 columns">
+    <% @users.each do |user| %>
+
+    <div class="large-6 columns">
       <div class="item-wrapper">
+
         <div class="img-wrapper">
           <%= link_to "View Profile", user, class: "button expand add-to-cart" %>
-          <%= image_tag user.image, :size => '260x180' %>
+          <div class="teacher-profile-image large-12" style="background-image:url(<%= user.image %>)"></div>
         </div>  
         <h3><%= user.name %></h3>
-          <% user.instruments.each do |instrument| %>
-            <strong>| <%= instrument.name %></strong>
-          <% end %>
+        <% user.instruments.each do |instrument| %>
+        <strong>| <%= instrument.name %></strong>
+        <% end %>
         <p><strong>Hourly Rate: £<%= user.price %></strong></p>
       </div>
- 
     </div>
 
-  </div>
-  <% end %>
 
+    <% end %>
+    </div>
+
+
+  </div>
 </ul>
 
 

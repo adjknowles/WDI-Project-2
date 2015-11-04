@@ -1,11 +1,14 @@
 <h1>All <%= @title %></h1>
 
+<div class="small-4 small-offset-4 columns">
 <%= search_form_for @q do |f| %>
-<%= f.text_field :address_cont, :placeholder => "Search Address" %>
-<%= collection_select :user, :instrument_id, Instrument.all, :id, :name %>
-<%= f.submit %>
+<%= collection_select :user, :instrument_id, Instrument.all, :id, :name, { prompt: "Pick an Instrument" } %>
+<%= f.text_field :address_cont, :placeholder => "Enter Your Location (City)" %>
+  <div class="small-4 small-offset-4 columns">
+    <%= f.submit class: "button" %>
+  </div>
 <% end %>
-
+</div>
 
 <ul>
   <div class="row">

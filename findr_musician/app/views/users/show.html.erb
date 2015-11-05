@@ -22,16 +22,14 @@
   <%= @user.contact_number %>
 </p>
 
+<% if @user.role == "Teacher" %>
 <p>
   <strong>Hourly Rate: </strong>£<%= @user.price %>
 </p>
-
 <p>
   <strong>Mini Bio:</strong>
   <%= @user.description %>
 </p>
-
-<% if @user.role == "Teacher" %>
 <p>
   <strong>Instruments I teach:</strong>
   <% @user.instruments.each do |instrument| %>

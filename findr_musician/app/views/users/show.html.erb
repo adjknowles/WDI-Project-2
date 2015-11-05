@@ -2,36 +2,36 @@
 
 <%= image_tag @user.image, :size => '260x180' %>
 
-<p>
+<p class="profile-p">
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
 
-<p>
+<p class="profile-p">
   <strong>Location (City):</strong>
   <%= @user.address %>
 </p>
 
-<p>
+<p class="profile-p">
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
 
-<p>
+<p class="profile-p">
   <strong>Contact #:</strong>
   <%= @user.contact_number %>
 </p>
 
 <% if @user.role == "Teacher" %>
-<p>
+<p class="profile-p">
   <strong>Hourly Rate: </strong>£<%= @user.price %>
 </p>
-<p>
+<p class="profile-p">
   <strong>Mini Bio:</strong>
   <%= @user.description %>
 </p>
-<p>
-  <strong>Instruments I teach:</strong>
+<p class="profile-p">
+  <strong>Instruments I Teach:</strong>
   <% @user.instruments.each do |instrument| %>
   <%= instrument.name %> <% if user_signed_in? %>– <%= link_to "Request Booking", "/users/#{@user.id}/lessons/new?instrument_id=#{instrument.id}" %><% end %>
   <% end %>

@@ -2,33 +2,58 @@
   <h1 class="lessontitle">My Upcoming Lessons</h1>
   <ul>
     <% @lessons_as_student.each do |lesson| %>
-    <li>
-      <ul>
         <%= image_tag lesson.teacher.try(:image), :size => '260x180' %>
-        <li><%= lesson.teacher.try(:name) %></li>
-        <li>Instrument: <%= lesson.instrument.try(:name) %></li>
-        <li><%= lesson.time %></li>
-        <li><%= lesson.date %></li>
-        <li><%= link_to 'Show', user_lesson_path(lesson.teacher_id, lesson) %></li>
-        <li><%= link_to 'Edit', edit_user_lesson_path(lesson.teacher_id, lesson) %></li>
-        <li><%= link_to 'Cancel lesson', user_lesson_path(lesson.teacher_id, lesson), method: :delete, data: { confirm: 'Are you sure?' } %></li>
-      </ul>
-    </li>
+        <p class="profile-p">
+          <strong>Name of Teacher:</strong>
+          <%= lesson.teacher.try(:name) %>
+        </p>
+        <p class="profile-p">
+          <strong>Instrument:</strong>
+          <%= lesson.instrument.try(:name) %>
+        </p>
+        <p class="profile-p">
+          <strong>Lesson Time:</strong>
+          <%= lesson.time %>
+        </p>
+        <p class="profile-p">
+          <strong>Lesson Date:</strong>
+          <%= lesson.date %>
+        </p>
+        <p class="profile-p">
+        <%= link_to 'Edit', edit_user_lesson_path(lesson.teacher_id, lesson) %>
+        </p>
+        <p class="profile-p">
+        <%= link_to 'Cancel lesson', user_lesson_path(lesson.teacher_id, lesson), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
     <% end %>
   </ul>
 <% else %>
   <h1 class="lessontitle">My Upcoming Lessons</h1>
   <% @lessons_as_teacher.each do |lesson| %>
-  <li>
-    <ul>
-      <%= image_tag lesson.student.try(:image), :size => '260x180' %>
-      <p><strong>Name of student: </strong><%= lesson.student.try(:name) %></p>
-      <p><strong>Lesson Date: </strong><%= lesson.date %></p>
-      <p><strong>Lesson Time: </strong><%= lesson.time %></p>
-      <p><%= link_to 'Show', user_lesson_path(lesson.teacher_id, lesson) %></p>
-      <p><%= link_to 'Edit', edit_user_lesson_path(lesson.teacher_id, lesson) %></p>
-      <p><%= link_to 'Cancel lesson', user_lesson_path(lesson.teacher_id, lesson), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    </ul>
-  </li>
+  <ul>
+    <%= image_tag lesson.student.try(:image), :size => '260x180' %>
+    <p class="profile-p">
+      <strong>Name of Student:</strong>
+      <%= lesson.student.try(:name) %>
+    </p>
+    <p class="profile-p">
+      <strong>Instrument:</strong>
+      <%= lesson.instrument.try(:name) %>
+    </p>
+    <p class="profile-p">
+      <strong>Lesson Time:</strong>
+      <%= lesson.time %>
+    </p>
+    <p class="profile-p">
+      <strong>Lesson Date:</strong>
+      <%= lesson.date %>
+    </p>
+    <p class="profile-p">
+    <%= link_to 'Edit', edit_user_lesson_path(lesson.teacher_id, lesson) %>
+    </p>
+    <p class="profile-p">
+    <%= link_to 'Cancel lesson', user_lesson_path(lesson.teacher_id, lesson), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+  </ul>
   <% end %>
 <% end %>

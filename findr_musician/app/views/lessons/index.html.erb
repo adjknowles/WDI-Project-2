@@ -19,9 +19,9 @@
           <strong>Lesson Date:</strong>
           <%= lesson.date %>
         </p>
-        <p class="profile-p">
+<!--         <p class="profile-p">
         <%= link_to 'Edit', edit_user_lesson_path(lesson.teacher_id, lesson) %>
-        </p>
+        </p> -->
         <p class="profile-p">
         <%= link_to 'Cancel lesson', user_lesson_path(lesson.teacher_id, lesson), method: :delete, data: { confirm: 'Are you sure?' } %>
         </p>
@@ -48,9 +48,9 @@
       <strong>Lesson Date:</strong>
       <%= lesson.date %>
     </p>
-    <p class="profile-p">
+<!--     <p class="profile-p">
     <%= link_to 'Edit', edit_user_lesson_path(lesson.teacher_id, lesson) %>
-    </p>
+    </p> -->
     <p class="profile-p">
     <%= link_to 'Cancel lesson', user_lesson_path(lesson.teacher_id, lesson), method: :delete, data: { confirm: 'Are you sure?' } %>
     </p>

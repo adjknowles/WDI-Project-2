@@ -35,7 +35,7 @@
 <p>
   <strong>Instruments I teach:</strong>
   <% @user.instruments.each do |instrument| %>
-    <%= instrument.name %> – <%= link_to "Request Booking", "/users/#{@user.id}/lessons/new?instrument_id=#{instrument.id}" %>
+  <%= instrument.name %> <% if user_signed_in? %>– <%= link_to "Request Booking", "/users/#{@user.id}/lessons/new?instrument_id=#{instrument.id}" %><% end %>
   <% end %>
 </p>
 <% end %>

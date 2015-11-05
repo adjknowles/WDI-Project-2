@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require simple-text-rotator.min
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

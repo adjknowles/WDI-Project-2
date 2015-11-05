@@ -68,12 +68,15 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="large-8 large-offset-2 columns">
+  <div class="large-10 large-offset-2 columns">
     <%= f.submit "Update", class: "button" %>
-    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button" %>
     <%= link_to "Back", :back %>
   </div>
 <% end %>
+
+  <div class="large-8 large-offset-2 columns">
+    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button" %>
+  </div>
 
 </div>
 </div>

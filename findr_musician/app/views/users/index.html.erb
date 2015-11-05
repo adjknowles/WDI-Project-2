@@ -1,40 +1,44 @@
-<h1 class="userheader">All <%= @title %></h1>
+<% content_for :home do %>
+  <div id="homepage-banner" class="search-page">
+    <h1 class="mainheader">Search for a teacher</h1>
+    <h2>Choose your instrument and location</h2>
 
-<div class="small-4 small-offset-4 columns">
-<%= search_form_for @q do |f| %>
-<%= collection_select :user, :instrument_id, Instrument.all, :id, :name, { prompt: "Pick an Instrument" } %>
-<%= f.text_field :address_cont, :placeholder => "Enter Your Location (City)" %>
-  <div class="small-4 small-offset-4 columns">
-    <%= f.submit class: "button" %>
+    <div class="row search">
+      <div class="small-12 columns">
+        <div class="row collapse">
+          <%= search_form_for @q do |f| %>
+          <!-- Search field -->
+          <div id="main-search" class="small-12 large-12 columns">
+            <%= collection_select :user, :instrument_id, Instrument.all, :id, :name, { prompt: "Pick an Instrument" } %>
+            <%= f.text_field :address_cont, placeholder: "Enter Your Location (City)", class: "search-field" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
-</div>
 
 <ul>
   <div class="row">
-    <div class="large-8 large-offset-2 columns">
-    <% @users.each do |user| %>
+    <div class="large-12 columns">
+      <% @users.each do |user| %>
+        <div class="small-12 medium-4 large-3 columns">
+          <div class="item-wrapper">
 
-    <div class="large-6 columns">
-      <div class="item-wrapper">
-
-        <div class="img-wrapper">
-          <%= link_to "View Profile", user, class: "button expand add-to-cart" %>
-          <div class="teacher-profile-image large-12" style="background-image:url(<%= user.image %>)"></div>
-        </div>  
-        <h3><%= user.name %></h3>
-        <% user.instruments.each do |instrument| %>
-        <strong>| <%= instrument.name %></strong>
-        <% end %>
-        <p><strong>Hourly Rate: £<%= user.price %></strong></p>
-      </div>
+            <div class="img-wrapper">
+              <%= link_to "View Profile", user, class: "button expand add-to-cart" %>
+              <div class="teacher-profile-image large-12" style="background-image:url(<%= user.image %>)"></div>
+            </div>  
+            <h3><%= user.name %></h3>
+            <% user.instruments.each do |instrument| %>
+            <strong>| <%= instrument.name %></strong>
+            <% end %>
+            <p><strong>Hourly Rate: £<%= user.price %></strong></p>
+          </div>
+        </div>
+      <% end %>
     </div>
-
-
-    <% end %>
-    </div>
-
-
   </div>
 </ul>
 

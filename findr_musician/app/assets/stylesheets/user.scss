@@ -1,5 +1,41 @@
 $primary-color: #008cba;
 
+header {
+  &.transparent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &.not-transparent {
+    background: black;
+    position: relative;
+  }
+  
+
+  .top-bar {
+    a {
+      text-shadow: 1px 1px rgba(0,0,0,0.6) !important;
+    }
+    .name {
+      h1 {
+        a {
+          color: #428bca;
+          text-shadow: none !important;
+        }
+      }
+    }
+  }
+}
+
+
+.logotitle, 
+.intro h4,
+.intro h2 {
+  text-align: center;
+}
+
 select#user_instrument_id {
   background-image: none;
 }
@@ -31,7 +67,7 @@ select#user_instrument_id {
   .add-to-cart {
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
-    background-color: #333;
+    background-color: #000;
     padding: 16px 8px;
     bottom: -50px;
     position: absolute;
@@ -63,36 +99,66 @@ p {
 
 #homepage-banner {
   padding: 30px;
-  // background: url("http://www.andromax-tab.com/wp-content/uploads/cool-music-notes-20141014022245-543c2685c5dbb.jpg");
-  background: url(image_path("mainbackground.jpg"));
+  background: #000;
   width: 100vw;
   height: 480px;
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-  h1 {
-    color: black;
-    margin-top: 230px;
+  margin-bottom: 3em;
+  
+  &.home {
+    background: url(image_path("guitarcouple.jpg"));
+    background-position: center;
+    background-size: cover;
+    text-align: center;
   }
+
+  &.about {
+    background: url(image_path("piano.jpg"));
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+  }
+
+  &.search-page {
+    background: url(image_path("search.jpg"));
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    h1, h2 {
+      text-shadow: 1px 1px rgba(0,0,0,0.6);
+    }
+  }
+
+  h1 {
+    font-weight: bold; 
+    letter-spacing: 2px;
+    color: white;
+    margin-top: 100px;
+  }
+
   h2 {
-    // color: black;
+    color: #f8f8f8;
     font-size: 20px;
   }
 }
 
 /* Styles for search dropdown */
 
+  #main-search {
+    select, input { 
+      width: 50%;
+      float: left;
+      height: 50px;
+      border: none;
+      outline: none; 
+    }
+  }
 
 .search {
   position: relative;
   padding-top: 41px;
   margin-bottom: 0;
-  width: 700px;
-  
-  input {
-   padding-left: 240px;
-  
-  }
+  max-width: 700px !important;
+
   .keyword {
     position: absolute;
     width: 140px;
@@ -145,17 +211,27 @@ p {
 }
 
 .footer {
-  background-color: #292c2f;
+  background-color: #428bca;
   text-align: center;
   font-size: 1.2rem;
   padding: 4rem;
-  margin-top: 40px;
+  margin-top: 6em;
+  color: black;
+
+  .logo {
+    font-size: 1em;
+    font-weight: bold;
+  }
   
+  p {
+    color: white;
+  }
+
   .inline-list a {
     display: inline-block;
     width: 2rem;
     height: 2rem;
-    background-color: #33383b;
+    background-color: #000;
     border-radius: 2px;
     font-size: 1.5rem;
     color: #fff;
@@ -172,7 +248,6 @@ p {
     
     li {
       margin-bottom: 2rem;
-      
       p {
         padding-left: 5rem;
       }
@@ -180,7 +255,7 @@ p {
     
     i {
       position: absolute;
-      background-color: #33383b;
+      background-color: #000;
       color: #fff;
       font-size: 2rem;
       border-radius: 50%;
@@ -192,14 +267,14 @@ p {
   }
   
   .copywrite {
-    color: #8f9296;
+    color: white;
     font-size: 0.875rem;
     margin: 0 0 1rem 0;
   }
   
   .about {
-    color: #92999f;
-    font-size: 0.875rem;
+    font-size: 2rem;
+    font-weight: bold;
     margin: 0 0 1rem 0;
   }
   
@@ -223,7 +298,7 @@ p {
   }
   
   @media only screen and (min-width: 40.063em) {
-    
+
     p {
       text-align: left;
     }
@@ -242,7 +317,7 @@ p {
     
   }
 }
-   
+
 .logo {
   color: #fff;
   font-size: 1.5rem;
@@ -260,8 +335,8 @@ p {
 }
 
 .left-solid {
-margin-top: 0px;
-margin-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .signup-panel {
@@ -304,12 +379,9 @@ margin-bottom: 0px;
 
 img.logoimages {
   height: 200px;
-}
-
-h2.logotitle {
-  color: #428bca;
-  font-weight: bold;
-  font-size: 40px !important;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 3em;
 }
 
 .teacher-profile-image {

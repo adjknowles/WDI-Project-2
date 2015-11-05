@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= content_for?(:title) ? yield(:title) : "FindR Musician" %></title>
   <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "vendor/modernizr" %>
   <%= javascript_include_tag "application" %>
@@ -12,9 +13,8 @@
 </head>
 
 <body>
-
-  <header>
-    <nav class="top-bar" data-topbar role="navigation">
+  <header class="<% if params[:controller] == "pages" || (params[:controller] == "users" && params[:action] == "teachers") %>transparent<% else %>not-transparent<% end %>">
+    <nav class="top-bar row" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
           <h1><a href="#"><%= link_to "Findr Musician", root_path %></a></h1>
@@ -32,9 +32,7 @@
         <!-- Right Nav Section -->
         <ul class="right">
           <% if current_user %>
-            <li><%= link_to "Users", users_path %></a></li>
             <li><%= link_to "All Teachers", teachers_path %></a></li>
-            <li><%= link_to "Students", students_path %></a></li>
             <li><%= link_to "My Lessons", user_lessons_path(current_user) %></a></li>
             <li class="has-dropdown">
               <a href="#"><%= current_user.name %></a>
@@ -62,13 +60,17 @@
     </nav>
   </header>
 
+  <%= yield :home %>
+
   <% flash.each do |name, message| %>
-  <div class="flash-message flash-message-<%= name %>">
-    <%= message %>
-  </div>
+    <div class="row flash-message flash-message-<%= name %>">
+      <%= message %>
+    </div>
   <% end %>
 
-  <%= yield %>
+  <main class="row">
+    <%= yield %>
+  </main>
 
   <footer>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
@@ -76,7 +78,7 @@
     <footer class="footer">
       <div class="row">
         <div class="small-12 medium-6 large-5 columns">
-          <p class="logo"><i class="fi-shield"></i> Findr Musician</p> 
+          <p class="logo">Findr Musician</p> 
           <p class="footer-links">
             <%= link_to "Home", root_path %>
             <%= link_to "About Us", about_path %>

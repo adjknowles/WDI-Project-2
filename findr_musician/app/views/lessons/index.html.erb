@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <% if current_user.role == "Student" %>
-  <h1>Listing Lessons As Student</h1>
+  <h1 class="lessontitle">My Upcoming Lessons</h1>
   <ul>
     <% @lessons_as_student.each do |lesson| %>
     <li>
@@ -19,7 +19,7 @@
     <% end %>
   </ul>
 <% else %>
-  <h1>Listing Lessons As Teacher</h1>
+  <h1 class="lessontitle">My Upcoming Lessons</h1>
   <% @lessons_as_teacher.each do |lesson| %>
   <li>
     <ul>

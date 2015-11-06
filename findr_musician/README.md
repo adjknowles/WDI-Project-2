@@ -38,6 +38,16 @@ Approach taken:
 Challenges:
 
 - One of the main challenges I had was implementing the Ransack gem for the search features.
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 
 
 If I had more time:

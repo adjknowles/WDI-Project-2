@@ -1,19 +1,17 @@
 # WDI-Project-2
+
 Second Project
 
 Ruby on Rails Website
 
 Findr Musician
 
-On the page:
 
-title
-3 buttons - start, instructions & new game
-timer
-4 x 4
-question display
-3 answer buttons, which appear when player selects a square
+The Idea:
 
+- As a musician, choosing to move to a new City can be a massive decision, as on average it takes around two years to get yourself known in the area - to build up a client base of students to teach, or to be asked to play in paid gigs.
+- So I thought to myself - wouldn't it be good to have a website where students can register to find a music teacher for the instrument or instruments of their choice, and where music teachers can also register a profile so that they can be contacted by potential students and build up a client base that way.
+- So this is why I have designed and created a web application called Findr Musician - and I would love to give you a demo of this now.
 
 
 Technologies used:
@@ -37,31 +35,29 @@ Approach taken:
 - I then went back to the styling - using Foundation to make the app look as good as possible.
 
 
-Functions used:
-
-getInstructions
-updateTimer
-getEquation
-generateRandomAnswer
-shuffleAnswers
-chooseAnswer
-newGame
-
 Challenges:
 
-I found creating the timer function very challenging. Even more so was getting the timer to stop if the player answered all 16 questions correctly.
-Generating random answers that were close to the correct answer was also a challenge. It took quite a bit of playing around with the formulas to get it to what it is now. It's still not perfect of course!
+- One of the main challenges I had was implementing the Ransack gem for the search features.
+
 
 If I had more time:
 
-I would have created 3 levels of game play of differing degrees of difficulty.
-Create a high score feature that updates when the player scores higher than the previous turn.
-Add sound.
-Refacter the code - make it dryer.
+There are a number of features I would have liked to have added or take further
 
-Initial ideas:
+- I would have liked to add a calendar booking system - using the gem Bookable. Able to check the availability of the teacher when making a booking.
+- Create user roles and permissions using the Rolify and CanCan gems.
+- Search by Post Code - allowing you to find teachers closest to you.
+- Having a map with the location of your nearest teachers.
+- Added a photo uploader so that the users can upload their own image.
+- Create an online portal for teachers and students to communicate inbetween lessons - including online chat, and an area for notes/recommendations.
+- Add a rating/comments system to find the best teachers.
+- Create an online payment system for lessons - so that no payment has to be made at the lesson itself.
+- Add additional cities.
+- Add additional information to the profile pages of the teachers to help the students to decide who to have lessons with.
+- Refacter the code - make it dryer.
 
-Originally I was going to do a picture quiz based on a theme. But I then realised that once you have played it once, you're probably going to remember the answers if you play it again.
-So then came the idea of a mathamatical quiz, where the questions are completely random and two of the answers are also random. This means that you can play as many times as you like.
-
+- Plans to branch out/spin-offs - such as:
+  - Findr Plumber
+  - Findr Gardener
+  - Findr Window Cleaner
 

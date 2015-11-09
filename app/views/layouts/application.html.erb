@@ -32,30 +32,30 @@
         <!-- Right Nav Section -->
         <ul class="right">
           <% if current_user %>
-            <li><%= link_to "All Teachers", teachers_path %></a></li>
-            <li><%= link_to "My Lessons", user_lessons_path(current_user) %></a></li>
-            <li class="has-dropdown">
-              <a href="#"><%= current_user.name %></a>
-              <ul class="dropdown">
-                <li><%= link_to "My Profile", current_user %></li>
-                <li><%= link_to "Edit My Profile", edit_user_registration_path %></li>
-                <li>
-                  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-                </li>
-              </ul>
-            </li>
-            
+          <li><%= link_to "All Teachers", teachers_path %></a></li>
+          <li><%= link_to "My Lessons", user_lessons_path(current_user) %></a></li>
+          <li class="has-dropdown">
+            <a href="#"><%= current_user.name %></a>
+            <ul class="dropdown">
+              <li><%= link_to "My Profile", current_user %></li>
+              <li><%= link_to "Edit My Profile", edit_user_registration_path %></li>
+              <li>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+
           <% else %>
-            <li>
-              <%= link_to "Register", new_user_registration_path %>
-            </li>
-            <li>
-              <%= link_to "Login", new_user_session_path, :data => { "reveal-id": "myModal" } %>
-            </li>
+          <li>
+            <%= link_to "Register", new_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to "Login", new_user_session_path, data: { "reveal-id": "myModal" } %>
+          </li>
           <% end %>
           
         </ul>
- 
+
       </section>
     </nav>
   </header>
@@ -63,9 +63,9 @@
   <%= yield :home %>
 
   <% flash.each do |name, message| %>
-    <div class="row flash-message flash-message-<%= name %>">
-      <%= message %>
-    </div>
+  <div class="row flash-message flash-message-<%= name %>">
+    <%= message %>
+  </div>
   <% end %>
 
   <main class="row">
@@ -75,7 +75,7 @@
   <footer>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
 
-    <footer class="footer">
+    <div class="footer">
       <div class="row">
         <div class="small-12 medium-6 large-5 columns">
           <p class="logo">Findr Musician</p> 
@@ -103,14 +103,15 @@
           </ul>
         </div>
       </div>
+    </div>
   </footer>
 
-<div id="myModal" class="reveal-modal remove-whitespace" data-reveal>
-<div class="row">
-    <div class="large-6 columns auth-plain">
-      <div class="signup-panel left-solid">
-        <p class="welcome">Registered Users</p>
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div id="myModal" class="reveal-modal remove-whitespace" data-reveal>
+    <div class="row">
+      <div class="large-6 columns auth-plain">
+        <div class="signup-panel left-solid">
+          <p class="welcome">Registered Users</p>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="row collapse">
             <div class="small-2  columns">
               <span class="prefix"><i class="fi-torso-female"></i></span>
@@ -128,21 +129,21 @@
             </div>
           </div>
           <%= f.submit "Log in", class: "button" %>
-        <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
 
-    <div class="large-6 columns auth-plain">
-      <div class="signup-panel newusers">
-        <p class="welcome"> New User?</p>
-        <p>By creating an account with us, you will be able to book a lesson, view and track your lesson bookings, and more.</p><br>
-        <%= link_to "Register", new_user_registration_path, class: "button " %>
+      <div class="large-6 columns auth-plain">
+        <div class="signup-panel newusers">
+          <p class="welcome"> New User?</p>
+          <p>By creating an account with us, you will be able to book a lesson, view and track your lesson bookings, and more.</p><br>
+          <%= link_to "Register", new_user_registration_path, class: "button " %>
+        </div>
       </div>
-    </div>
 
-   </div>   
-  <a class="close-reveal-modal">&#215;</a>
-</div>  
+    </div>   
+    <a class="close-reveal-modal">&#215;</a>
+  </div>  
 
 </body>
 </html>

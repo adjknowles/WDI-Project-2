@@ -68,16 +68,8 @@ In this project I have used HTML, CSS, Javascript, JQuery, Ruby and Rails.
 ##Challenges:
 
 - One of the main challenges I had was implementing the Ransack gem for the search features.
--
--
--
--
--
--
--
--
--
--
+- Getting the students and teachers to see different information without using a Ruby GEM such as CanCan.
+- Getting the delete and update user form to function correctly.
 
 
 ##If I had more time:

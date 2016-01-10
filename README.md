@@ -7,19 +7,49 @@ Ruby on Rails Website
 Findr Musician
 
 
-The Idea:
+##The Idea:
 
 - As a musician, choosing to move to a new City can be a massive decision, as on average it takes around two years to get yourself known in the area - to build up a client base of students to teach, or to be asked to play in paid gigs.
 - So I thought to myself - wouldn't it be good to have a website where students can register to find a music teacher for the instrument or instruments of their choice, and where music teachers can also register a profile so that they can be contacted by potential students and build up a client base that way.
 - So this is why I have designed and created a web application called Findr Musician - and I would love to give you a demo of this now.
 
 
-Technologies used:
+##Screenshots
+
+The homepage.
+![homepage](./images/image1.png)
+
+Register.
+![register](./images/image2.png)
+
+Login.
+![login](./images/image3.png)
+
+The about us page.
+![about](./images/image4.png)
+
+Searching for a music teacher.
+![search](./images/image5.png)
+
+The results.
+![results](./images/image6.png)
+
+Teacher profile page.
+![teacher](./images/image7.png)
+
+Booking a lesson.
+![booking](./images/image8.png)
+
+Checking upcoming lessons.
+![upcoming](./images/image9.png)
+
+
+##Technologies used:
 
 In this project I have used HTML, CSS, Javascript, JQuery, Ruby and Rails.
 
 
-Approach taken:
+##Approach taken:
 
 - Brainstormed some possible ideas
 - Made a plan using the chosen idea
@@ -35,7 +65,7 @@ Approach taken:
 - I then went back to the styling - using Foundation to make the app look as good as possible.
 
 
-Challenges:
+##Challenges:
 
 - One of the main challenges I had was implementing the Ransack gem for the search features.
 -
@@ -50,9 +80,9 @@ Challenges:
 -
 
 
-If I had more time:
+##If I had more time:
 
-There are a number of features I would have liked to have added or take further
+###There are a number of features I would have liked to have added or take further
 
 - I would have liked to add a calendar booking system - using the gem Bookable. Able to check the availability of the teacher when making a booking.
 - Create user roles and permissions using the Rolify and CanCan gems.
